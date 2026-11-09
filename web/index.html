@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#000">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Later Now</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="icon" href="icon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="brand">Later Now</div>
+<div class="side-panel" id="panelL"><h4>Up next</h4><div id="upnext"></div></div>
+<div id="app">
+  <header>
+    <div class="hrow">
+      <div class="wordmark">Later Now</div>
+      <div class="hbtns">
+        <button class="hbtn" id="pinBtn" aria-label="Keep on top" title="Keep on top of every window" hidden><svg viewBox="0 0 24 24"><path d="M4.5 5.5h15a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1h-15a1 1 0 0 1-1-1v-11a1 1 0 0 1 1-1zM12 11.5h5.5v4.5H12z"/></svg></button>
+        <button class="hbtn" id="libBtn" aria-label="Library"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span class="busy" id="busyDot"></span></button>
+        <button class="hbtn" id="addBtn" aria-label="Add videos"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
+      </div>
+    </div>
+    <div class="topics" id="topics"></div>
+  </header>
+  <div id="scroller"></div>
+  <div id="playerWrap"><div id="player"></div></div>
+  <div id="cover"><div class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z"/></svg></div></div>
+  <div id="tap"></div>
+  <div id="lsHead"></div><div id="lsCap" class="cap"></div>
+  <div class="pill" id="snd">Tap for sound</div>
+  <div class="pill" id="fast">2×</div>
+  <div class="pill" id="toast"></div>
+  <div id="scrim"></div>
+
+  <div class="sheet" id="addSheet"><div class="grab"></div>
+    <h3>Add videos</h3>
+    <p class="sub">Paste YouTube links or a playlist. Each long video becomes a handful of short moments.</p>
+    <div class="quick" id="quick"></div>
+    <textarea id="urls" placeholder="youtube.com/watch?v=…&#10;youtube.com/playlist?list=…"></textarea>
+    <button class="btn" id="addGo">Add</button>
+  </div>
+
+  <div class="sheet" id="libSheet"><div class="grab"></div>
+    <h3>Library</h3>
+    <div class="stats" id="stats"></div>
+    <div class="row-link" id="aiRow"></div>
+    <div class="lhead"><span>Your taste</span></div><div id="taste"></div>
+    <div class="lhead"><span>Videos</span><button class="link" id="retry">Retry failed</button></div><div id="vids"></div>
+  </div>
+
+  <div class="sheet" id="aiSheet"><div class="grab"></div>
+    <h3>Connect Gemini</h3>
+    <p class="sub">Later Now uses your own Gemini API key to pick the best parts of each video. A key is free and takes a minute.</p>
+    <ol class="steps">
+      <li>Open <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a> and sign in.</li>
+      <li>Click <b>Create API key</b> and copy it.</li>
+      <li>Paste it here.</li>
+    </ol>
+    <input class="field" id="aiKey" placeholder="Gemini API key" autocomplete="off" spellcheck="false">
+    <p class="err" id="aiErr"></p>
+    <button class="btn" id="aiGo">Connect</button>
+    <p class="fine" id="aiWhere"></p>
+    <button class="link danger" id="aiRemove">Remove key</button>
+  </div>
+
+  <div class="sheet" id="keySheet"><div class="grab"></div>
+    <h3>Access key</h3><p class="sub">This Later Now server is private. Paste the key from your setup.</p>
+    <input class="field" id="keyIn" placeholder="LATERNOW_KEY" autocomplete="off" spellcheck="false"><button class="btn" id="keyGo">Continue</button>
+  </div>
+
+  <div id="gate">
+    <h1>Later Now</h1>
+    <p>Your long videos and podcasts, as a scroll of short moments. It learns what you like from how you watch.</p>
+    <button class="btn" id="go">Start watching</button>
+    <small>Best with sound on</small>
+  </div>
+</div>
+<div class="side-panel" id="panelR"><h4>Shortcuts</h4>
+  <div class="kbd"><b>↓</b>Next</div><div class="kbd"><b>↑</b>Previous</div><div class="kbd"><b>Space</b>Pause</div>
+  <div class="kbd"><b>L</b>Like</div><div class="kbd"><b>M</b>Sound</div>
+  <div class="kbd"><b>F</b>Full video</div><div class="kbd"><b>A</b>Add videos</div>
+</div>
+<script src="player.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

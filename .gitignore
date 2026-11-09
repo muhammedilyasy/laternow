@@ -1,0 +1,14 @@
+extension/dist/
+extension/app/
+venv/
+*.db
+*.db-*
+.env
+__pycache__/
+.DS_Store
+
+# Xcode
+xcuserdata/
+DerivedData/
+*.xcuserstate
+ios/build/
