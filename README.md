@@ -7,6 +7,19 @@ which topics you like from how you watch, and never shows you the same moment tw
 You bring your own Gemini API key. A free key is enough. Nothing is hosted: the extension runs entirely in your
 browser, and the web version runs on your own machine.
 
+## How it works
+
+1. **Add your Watch Later.** Import it as a playlist, or paste any video or playlist link.
+2. **AI cuts it into moments.** Each video becomes 25 to 90 second clips that make sense on their own, each with a
+   title and a topic.
+3. **Scroll it like Reels.** The feed has its own algorithm. It learns from what you like, save, skip and how long
+   you watch each clip, and shows more of the topics you actually watch. Finished clips never come back, and skipped
+   ones only return much later.
+
+Same doomscrolling, except it's the stuff you saved.
+
+## Apps
+
 - **Chrome extension** (`extension/`): the main product. A phone-sized window on any tab, or a floating player that
   stays on top of every app.
 - **iPhone app** (`ios/`): native SwiftUI with Liquid Glass. Everything runs on the phone.
